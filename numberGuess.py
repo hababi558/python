@@ -5,15 +5,19 @@ r = random.randint(1,9)
 print('Number guessing game')
 print('Guess a number (between 1 to 9)')
 
-guess=None
+chance=0
 
-while guess != r:
-    guess=input('Choose a numbers: ')
+while chance < 5:
+    guess=int(input('Enter ur Guess: '))
 
-while chances < 5:
-
-if guess == r :
+    if guess == r :
         print('Congratulation u won')
 
-else:
-        print('you lose')
+    elif guess < r :
+        print('your guess was too low. guess a number higher than ',guess)
+    else:
+        print('your guess was too high. guess a number lower than ', guess)
+    chance=chance+1
+    
+if not chance < 5 :
+    print('You lose the number is: ',r)
